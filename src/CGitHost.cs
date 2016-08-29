@@ -6,7 +6,7 @@ using System.ServiceProcess;
 using System.Timers;
 using System.Web.Script.Serialization;
 
-namespace racaljkhost
+namespace HostSyncer
 {
     partial class CGitHost : ServiceBase
     {
@@ -16,7 +16,7 @@ namespace racaljkhost
 
         private string LocalHostBak => Path.Combine(EtcPath, "hosts.bak");
 
-        private string CommitInfoLink => "https://api.github.com/repos/racaljk/hosts/commits?path=/hosts";
+        private string CommitInfoLink => ConfigurationManager.AppSettings["CommitInfoLink"];
 
         private string HostFileLink => ConfigurationManager.AppSettings["HostFileSrc"];
 

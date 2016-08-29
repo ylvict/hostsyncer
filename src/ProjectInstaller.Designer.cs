@@ -1,4 +1,4 @@
-﻿namespace racaljkhost
+﻿namespace HostSyncer
 {
     partial class ProjectInstaller
     {
@@ -39,8 +39,8 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.Description = "Auto update host file from racaljk/hosts";
-            this.serviceInstaller1.ServiceName = "racaljkhost";
+            this.serviceInstaller1.Description = "Auto update host file";
+            this.serviceInstaller1.ServiceName = "hostsyncer";
             // 
             // ProjectInstaller
             // 

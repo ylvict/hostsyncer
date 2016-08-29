@@ -7,8 +7,8 @@
     <ProjectGuid>{44764DFB-A3CA-4036-92BC-1C25081E57F2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>racaljkhost</RootNamespace>
-    <AssemblyName>racaljkhost</AssemblyName>
+    <RootNamespace>HostSyncer</RootNamespace>
+    <AssemblyName>HostSyncer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

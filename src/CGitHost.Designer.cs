@@ -1,6 +1,6 @@
 ﻿using System.Timers;
 
-namespace racaljkhost
+namespace HostSyncer
 {
     partial class CGitHost
     {

@@ -1,9 +1,9 @@
-# syncracaljkhost
-A Windows services for auto update local hosts file from repo https://github.com/racaljk/hosts
+# Host Syncer
+A Windows services for auto update local hosts file.
 
 Install Steps:
 
-1. Unzip [**release**](https://github.com/ylvict/syncracaljkhost/releases) package;
+1. Unzip [**release**](https://github.com/ylvict/hostsyner/releases) package;
 2. Launch Command Prompt (cmd) as Administrator
 3. Navigate to folder where pack unzipped to;
 4. Run "Install.bat";

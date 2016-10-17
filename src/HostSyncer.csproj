@@ -55,6 +55,8 @@
     <Compile Include="CGitHost.Designer.cs">
       <DependentUpon>CGitHost.cs</DependentUpon>
     </Compile>
+    <Compile Include="HostItem.cs" />
+    <Compile Include="HostModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>

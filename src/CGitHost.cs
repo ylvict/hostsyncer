@@ -87,7 +87,7 @@ namespace HostSyncer
             {
                 return File.ReadAllLines(repo.DestPath)
                     .Where(x => !x.Trim().StartsWith("#"))
-                    .Where(x => !String.IsNullOrWhiteSpace(x))
+                    .Where(x => !String.IsNullOrEmpty(x.Trim()))
                     .Select(x => new HostItem(x))
                     .Where(x => (repo.OnlyDomain == null) || (repo.OnlyDomain.Length > 0 && repo.OnlyDomain.Count(d => x.Domain.EndsWith(d)) > 0))
                     .Where(x => repo.IgnoreDomain.Count(ig => x.Domain.EndsWith(ig)) <= 0);
@@ -98,7 +98,7 @@ namespace HostSyncer
             System.Diagnostics.Debugger.Launch();
 #endif
 
-            File.WriteAllLines(HostModel.LocalHost, items);
+            File.WriteAllLines(HostModel.LocalHost, items.ToArray());
         }
 
         private DateTime GetLatestCommitTime(string commitInfoLink)
@@ -109,8 +109,8 @@ namespace HostSyncer
             var stream = response.GetResponseStream();
             var reader = new StreamReader(stream);
             var commitTxt = reader.ReadToEnd();
-            dynamic commit = Serializer.Deserialize<dynamic>(commitTxt);
-            DateTime lastCommitDate = Convert.ToDateTime(commit[0]["commit"]["committer"]["date"]);
+            var commit = Serializer.Deserialize<CommitInfoModel[]>(commitTxt);
+            DateTime lastCommitDate = commit[0].Commit.Committer.Date;
             reader.Close();
             stream.Close();
             response.Close();

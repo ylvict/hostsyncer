@@ -14,7 +14,15 @@ namespace HostSyncer
             this.OnlyDomain = null;
         }
 
-        private static string EtcPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers", "etc");
+        private static string EtcPath
+        {
+            get
+            {
+                var path = Environment.GetFolderPath(Environment.SpecialFolder.System);
+                path = Path.Combine(path, "drivers");
+                return Path.Combine(path, "etc");
+            }
+        }
         public static string LocalHost => Path.Combine(EtcPath, "hosts");
         public static string LocalHostBak => Path.Combine(EtcPath, "hosts.bak");
 
